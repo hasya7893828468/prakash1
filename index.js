@@ -160,3 +160,31 @@ addnumbers(645645,456546);
 
 const love = num5 => num5 +6;
 console.log(love(2))
+
+const person1 =new Person('ram','prakash','4-11-2000');
+const person2 =new Person('pentakota','bangaruthalli','6-30-1974')
+
+function Person(firstname,lastname,dob){
+this.firstname =firstname;
+this.lastname =lastname;
+this.dob =new Date(dob);
+/*this.getfullname =function(){
+  return`${this.firstname}${this.lastname}`
+}
+this.getfullyear =function(){
+  return this.dob.getFullYear();
+}*/
+}
+
+Person.prototype.getfullyear=function(){
+  return this.dob.getFullYear()
+}
+Person.prototype.getfullname=function(){
+  return `${this.firstname}${this.lastname}`
+}
+console.log(person1);
+console.log(person2);
+console.log(person1.getfullname())
+console.log(person2.getfullname())
+console.log(person1.getfullyear());
+console.log(person2.getfullyear())
